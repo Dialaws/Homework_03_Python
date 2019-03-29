@@ -73,7 +73,7 @@ with open(bank_csv,newline="") as bankcsv:
 
         
         
-
+sys.stdout = open('pybank2test.txt', 'w+')
 
 print("Financial Analysis")
 print("------------------------------------------------------------")
@@ -84,4 +84,7 @@ print('Average Change:'+'$'+str(round((difference_sum/(len(date)-1)),2)))
 #print('Greatest Decrease in Profit: '+str(greatestdecrease))
 print('Greatest Increase in Profit:' + str(datemax) + str(greatestincrease))
 print('Greatest Deacrease in Profit:'+ str(datemin) + str(greatestdecrease))
-
+sys.stdout.close()
+sys.stdout=sys.__stdout__
+#with open(bank_csv2, w) as test:
+#    print("jjj",file=bank_csv2)

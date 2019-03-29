@@ -1,6 +1,7 @@
 #pypoll
 import os
 import csv
+import sys
 
 totalvotes=0
 candidateset=set()
@@ -62,7 +63,7 @@ liper= round(litotal/totalvotes *100,0)
 correyper= round(correytotal/totalvotes *100,0)
 otooleyper=round(otooleytotal/totalvotes *100,0) 
 
-
+sys.stdout = open('pypoll.txt', 'w+')
 print("Election Results")
 print("------------------------------------------------")
 print("Total Votes: "+str(totalvotes))
@@ -73,4 +74,6 @@ print("Li:"+str(liper)+str("%")+str("(")+ str(litotal)+str(")"))
 print("O'Tooley:" +str(otooleyper)+str("%")+str("(")+str(otooleytotal)+str(")"))
 print("-------------------------------------------------")
 print("Winner:"+str(winner))
+sys.stdout.close()
+sys.stdout=sys.__stdout__
 

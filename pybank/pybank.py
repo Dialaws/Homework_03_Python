@@ -2,6 +2,7 @@
 #pybank
 import os
 import csv
+import sys
 
 #Path to collect data
 bank_csv= os.path.join('..','pybank','pybank.csv')
@@ -63,7 +64,7 @@ with open(bank_csv,newline="") as bankcsv:
           #   greatestdecmonth=str(row[0])
         
 
-
+sys.stdout = open('pybank1.txt', 'w+')
 print("Financial Analysis")
 print("------------------------------------------------------------")
 print('Total Months:'+str(len(date)))
@@ -73,3 +74,5 @@ print('Average:'+str(round(difference_sum/(len(date)-1),2)))
 #print('Greatest Decrease in Profit: '+str(greatestdecrease))
 print('Greatest Increase month:' + str(datemax) + str(greatestincrease))
 print('Greatest Deacrease month:'+ str(datemin) + str(greatestdecrease))
+sys.stdout.close()
+sys.stdout=sys.__stdout__
