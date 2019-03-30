@@ -82,8 +82,8 @@ print('Total: $'+str(total))
 print('Average Change:'+'$'+str(round((difference_sum/(len(date)-1)),2)))
 #print('Greatest Increase in Profit: '+str(greatestincrease))
 #print('Greatest Decrease in Profit: '+str(greatestdecrease))
-print('Greatest Increase in Profit:' + str(datemax) + str(greatestincrease))
-print('Greatest Deacrease in Profit:'+ str(datemin) + str(greatestdecrease))
+print('Greatest Increase in Profit:' + str(datemax) +str('$')+ str(greatestincrease))
+print('Greatest Deacrease in Profit:'+ str(datemin) +str('$')+ str(greatestdecrease))
 sys.stdout.close()
 sys.stdout=sys.__stdout__
 #with open(bank_csv2, w) as test:
